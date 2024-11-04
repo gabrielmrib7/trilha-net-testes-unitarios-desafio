@@ -59,15 +59,14 @@ public class ValidacoesListaTests
 
         // Arrange
         var lista = new List<int> { 5, 7, 8, 9 };
-        var resultadoEsperado = new List<int> { 10, 14, 16, 18 };
+        var resultadoEsperado = new List<int> { 10, 14, 16, 18};
         
         // Act
         var resultado = _validacoes.MultiplicarNumerosLista(lista, 2);
-        resultado = resultado.Intersect(resultadoEsperado).ToList();
-        var resultadoBool = (resultado.Count == resultadoEsperado.Count);
+        
 
         // Assert
-        Assert.True(resultadoBool);
+        Assert.Equal(resultado, resultadoEsperado);
     }
 
     [Fact]
